@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Timéo Ruiz – Étudiant en BUT Informatique</title>
+    <meta
+      name="description"
+      content="Portfolio de Timéo Ruiz, étudiant en BUT Informatique à l’IUT de Lens : projets, compétences et contact."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wave" id="wave" aria-hidden="true"></div>
+
+    <header class="top">
+      <div class="wrap">
+        <a class="logo" href="#haut">Timéo Ruiz</a>
+        <div
+          class="transport"
+          role="group"
+          aria-label="Lecture automatique du site"
+        >
+          <button
+            type="button"
+            id="play"
+            aria-pressed="false"
+            aria-label="Lecture : faire défiler le site"
+          >
+            ▶
+          </button>
+          <button type="button" id="stop" aria-label="Stop : revenir en haut">
+            ■
+          </button>
+          <output id="time" aria-hidden="true">00:00</output>
+        </div>
+        <nav aria-label="Navigation principale">
+          <a href="#projets">Projets</a>
+          <a href="#competences">Compétences</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="haut">
+      <!-- ===== ACCUEIL ===== -->
+      <section class="hero">
+        <div class="wrap">
+          <h1>
+            Je conçois des <span>applications</span> qui servent à quelque
+            chose.
+          </h1>
+          <!-- À MODIFIER : ta phrase de présentation -->
+          <p class="lead">
+            Je m’appelle Timéo Ruiz, étudiant en 2e année de BUT Informatique à
+            l’IUT de Lens. Je cherche un stage du 12 avril au 18 juin 2027 pour
+            appliquer mes compétences sur des projets concrets.
+          </p>
+          <a class="btn main" href="#projets">Voir mes projets</a>
+          <a class="btn alt" href="cv.pdf" download>Télécharger mon CV</a>
+          <div class="daw" aria-hidden="true">
+            <div class="track">
+              <div
+                class="clip"
+                style="left: 2%; width: 30%; background: #ff8a3d"
+              >
+                JavaScript
+              </div>
+              <div
+                class="clip"
+                style="left: 35%; width: 24%; background: #ffd84d"
+              >
+                HTML / CSS
+              </div>
+              <div
+                class="clip"
+                style="left: 62%; width: 34%; background: #8ab4ff"
+              >
+                React
+              </div>
+            </div>
+            <div class="track">
+              <div
+                class="clip"
+                style="left: 8%; width: 26%; background: #7fd6c2"
+              >
+                PHP
+              </div>
+              <div
+                class="clip"
+                style="left: 37%; width: 30%; background: #ff7aa8"
+              >
+                Java
+              </div>
+              <div
+                class="clip"
+                style="left: 70%; width: 26%; background: #ffd84d"
+              >
+                SQL
+              </div>
+            </div>
+            <div class="track">
+              <div
+                class="clip"
+                style="left: 2%; width: 40%; background: #8ab4ff"
+              >
+                Git &amp; GitHub
+              </div>
+              <div
+                class="clip"
+                style="left: 45%; width: 22%; background: #ff8a3d"
+              >
+                Docker
+              </div>
+              <div
+                class="clip"
+                style="left: 70%; width: 26%; background: #7fd6c2"
+              >
+                Tests
+              </div>
+            </div>
+            <div class="playhead"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== À PROPOS ===== -->
+      <section id="apropos">
+        <div class="wrap about">
+          <div>
+            <h2>À propos</h2>
+            <!-- À MODIFIER : 3 à 4 phrases, pas plus -->
+            <p>
+              Étudiant en BUT Informatique à l’IUT de Lens, parcours Réalisation
+              d’applications, je développe avec Java, PHP et Python. J’aime les
+              projets concrets, où le code débouche sur un outil que l’on peut
+              utiliser.
+            </p>
+            <p>En dehors des cours : création de musique et jeux vidéo.</p>
+          </div>
+          <dl class="lcd">
+            <dt>Titre</dt>
+            <dd>Timéo Ruiz</dd>
+            <dt>Tonalité</dt>
+            <dd>Développement d’applications</dd>
+            <dt>BPM (année de BUT)</dt>
+            <dd>2</dd>
+            <dt>Formation</dt>
+            <dd>BUT Informatique – IUT de Lens</dd>
+            <dt>Recherche</dt>
+            <dd>Stage du 12/04 au 18/06/2027</dd>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ===== PROJETS ===== -->
+      <section id="projets">
+        <div class="wrap">
+          <h2>Projets</h2>
+          <div class="filters" role="group" aria-label="Filtrer les projets">
+            <button type="button" data-filter="all" aria-pressed="true">
+              Tous
+            </button>
+            <button type="button" data-filter="web" aria-pressed="false">
+              Web
+            </button>
+            <button type="button" data-filter="bureau" aria-pressed="false">
+              Bureau
+            </button>
+          </div>
+
+          <p class="legend">
+            Chaque projet est une piste : le fader indique ma part de travail,
+            <strong>M</strong> estompe la piste, <strong>S</strong> la met en
+            solo.
+          </p>
+
+          <div class="projects">
+            <!-- Copie un bloc <article> pour ajouter un projet. data-cat = web ou bureau (ou mobile : remets le bouton du filtre) -->
+            <article class="project" data-cat="bureau">
+              <div class="strip" role="group" aria-label="Piste 01">
+                <span class="chan">01</span>
+                <!-- À MODIFIER : ta part dans ce projet (--lvl) -->
+                <div
+                  class="fader"
+                  style="--lvl: 70%"
+                  title="Ma part dans le projet : 70%"
+                >
+                  <span class="knob"></span>
+                </div>
+                <span class="val">70%</span>
+                <div class="ms">
+                  <button
+                    type="button"
+                    class="m"
+                    aria-pressed="false"
+                    title="Mute : estomper ce projet"
+                  >
+                    M
+                  </button>
+                  <button
+                    type="button"
+                    class="s"
+                    aria-pressed="false"
+                    title="Solo : isoler ce projet"
+                  >
+                    S
+                  </button>
+                </div>
+              </div>
+              <div class="shot">
+                <!-- Remplace par : <img src="images/projet1.png" alt="Capture de l’application"> -->Capture
+                d’écran
+              </div>
+              <div>
+                <h3>Générateur de fractales</h3>
+                <p>
+                  <strong>Contexte :</strong> projet universitaire à l’IUT de
+                  Lens (juin 2026) : une application qui génère des fractales,
+                  développée en Java avec la programmation orientée objet.
+                </p>
+                <p>
+                  <strong>Mon rôle :</strong> [À compléter : projet seul ou en
+                  groupe, ce que tu as développé]
+                </p>
+                <p>
+                  <strong>Difficulté résolue :</strong> [À compléter : un
+                  problème technique rencontré et comment tu l’as réglé]
+                </p>
+                <ul class="tags">
+                  <li>Java</li>
+                  <li>POO</li>
+                </ul>
+                <div class="links">
+                  <a href="https://github.com/TON-PSEUDO/projet1">Code</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project" data-cat="web">
+              <div class="strip" role="group" aria-label="Piste 02">
+                <span class="chan">02</span>
+                <!-- À MODIFIER : ta part dans ce projet (--lvl) -->
+                <div
+                  class="fader"
+                  style="--lvl: 70%"
+                  title="Ma part dans le projet : 70%"
+                >
+                  <span class="knob"></span>
+                </div>
+                <span class="val">70%</span>
+                <div class="ms">
+                  <button
+                    type="button"
+                    class="m"
+                    aria-pressed="false"
+                    title="Mute : estomper ce projet"
+                  >
+                    M
+                  </button>
+                  <button
+                    type="button"
+                    class="s"
+                    aria-pressed="false"
+                    title="Solo : isoler ce projet"
+                  >
+                    S
+                  </button>
+                </div>
+              </div>
+              <div class="shot">
+                <!-- Remplace par : <img src="images/projet2.png" alt="Capture de l’application"> -->Capture
+                d’écran
+              </div>
+              <div>
+                <h3>Site web statique</h3>
+                <p>
+                  <strong>Contexte :</strong> projet universitaire à l’IUT de
+                  Lens (janvier 2026) : un site web statique réalisé avec Git,
+                  HTML et CSS.
+                </p>
+                <p>
+                  <strong>Mon rôle :</strong> [À compléter : projet seul ou en
+                  groupe, ce que tu as développé]
+                </p>
+                <p>
+                  <strong>Difficulté résolue :</strong> [À compléter : un
+                  problème technique rencontré et comment tu l’as réglé]
+                </p>
+                <ul class="tags">
+                  <li>Git</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                </ul>
+                <div class="links">
+                  <a href="https://github.com/TON-PSEUDO/projet2">Code</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== COMPÉTENCES ===== -->
+      <section id="competences">
+        <div class="wrap">
+          <h2>Compétences</h2>
+          <!-- À MODIFIER : règle chaque --v (0 à 100) selon ton vrai niveau -->
+          <div class="skillgroup">
+            <h3>Langages</h3>
+            <div class="knobs">
+              <div class="kn">
+                <div class="dial" style="--v: 70" title="Java : 70%">
+                  <b></b>
+                </div>
+                Java
+              </div>
+              <div class="kn">
+                <div class="dial" style="--v: 60" title="PHP : 60%">
+                  <b></b>
+                </div>
+                PHP
+              </div>
+              <div class="kn">
+                <div class="dial" style="--v: 60" title="Python : 60%">
+                  <b></b>
+                </div>
+                Python
+              </div>
+              <div class="kn">
+                <div class="dial" style="--v: 75" title="HTML : 75%">
+                  <b></b>
+                </div>
+                HTML
+              </div>
+              <div class="kn">
+                <div class="dial" style="--v: 70" title="CSS : 70%">
+                  <b></b>
+                </div>
+                CSS
+              </div>
+            </div>
+          </div>
+          <div class="skillgroup">
+            <h3>Données</h3>
+            <div class="knobs">
+              <div class="kn">
+                <div class="dial" style="--v: 60" title="PostgreSQL : 60%">
+                  <b></b>
+                </div>
+                PostgreSQL
+              </div>
+            </div>
+          </div>
+          <div class="skillgroup">
+            <h3>Outils</h3>
+            <div class="knobs">
+              <div class="kn">
+                <div class="dial" style="--v: 65" title="Git : 65%">
+                  <b></b>
+                </div>
+                Git
+              </div>
+              <div class="kn">
+                <div class="dial" style="--v: 70" title="IntelliJ : 70%">
+                  <b></b>
+                </div>
+                IntelliJ
+              </div>
+              <div class="kn">
+                <div class="dial" style="--v: 70" title="VS Code : 70%">
+                  <b></b>
+                </div>
+                VS Code
+              </div>
+              <div class="kn">
+                <div class="dial" style="--v: 65" title="PyCharm : 65%">
+                  <b></b>
+                </div>
+                PyCharm
+              </div>
+              <div class="kn">
+                <div class="dial" style="--v: 65" title="PhpStorm : 65%">
+                  <b></b>
+                </div>
+                PhpStorm
+              </div>
+              <div class="kn">
+                <div class="dial" style="--v: 60" title="Eclipse : 60%">
+                  <b></b>
+                </div>
+                Eclipse
+              </div>
+            </div>
+          </div>
+          <div class="skillgroup">
+            <h3>Langues</h3>
+            <div class="knobs">
+              <div class="kn">
+                <div class="dial" style="--v: 78" title="Anglais B2/C1 : 78%">
+                  <b></b>
+                </div>
+                Anglais B2/C1
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT ===== -->
+      <section id="contact" class="contact">
+        <div class="wrap">
+          <h2>Me contacter</h2>
+          <p>
+            Un stage, une alternance ou une question sur un de mes projets ?
+            Écris-moi, je réponds sous quelques jours.
+          </p>
+          <a class="rec" href="mailto:ton-email@exemple.fr"
+            ><i aria-hidden="true"></i>Envoyer un message</a
+          >
+          <ul>
+            <li>
+              <a href="mailto:ton-email@exemple.fr">RuizTimeo@proton.me</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/TON-PROFIL">LinkedIn</a>
+            </li>
+            <li><a href="https://github.com/TON-PSEUDO">GitHub</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="status">
+      <div class="wrap">
+        <span class="ok">Prêt</span>
+        <span>© <span id="annee"></span> Timéo Ruiz · v1.0</span>
+        <span>Mis à jour le <span id="maj"></span></span>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

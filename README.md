@@ -8,3 +8,4 @@ Portfolio en HTML, CSS et JavaScript, sans framework ni bibliothèque.
 - `style.css` : apparence (thème clair/sombre, mobile)
 - `script.js` : comportements (filtres, mixer, forme d'onde, etc.)
 - `cv.pdf` : CV téléchargeable
+- `dossier img` : images des projets

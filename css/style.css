@@ -1,12 +1,22 @@
 :root{
+  color-scheme:light;
   --bg:#eef1f6; --surface:#ffffff; --ink:#14213d; --muted:#4f5b75;
   --line:#cfd6e4; --accent:#2b4eff; --accent-ink:#ffffff; --mark:#ffd84d;
   --display:"Bricolage Grotesque","Trebuchet MS",sans-serif;
   --body:"Instrument Sans","Segoe UI",Arial,sans-serif;
 }
+/* Thème sombre : choisi avec le bouton, ou automatique selon l'appareil (si JS désactivé) */
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0f1730; --surface:#172143; --ink:#eaf0ff; --muted:#a7b3d1;
+  --line:#2a3963; --accent:#7f98ff; --accent-ink:#0f1730; --mark:#ffd84d;
+}
 @media (prefers-color-scheme:dark){
-  :root{--bg:#0f1730; --surface:#172143; --ink:#eaf0ff; --muted:#a7b3d1;
-        --line:#2a3963; --accent:#7f98ff; --accent-ink:#0f1730; --mark:#ffd84d}
+  :root:not([data-theme]){
+    color-scheme:dark;
+    --bg:#0f1730; --surface:#172143; --ink:#eaf0ff; --muted:#a7b3d1;
+    --line:#2a3963; --accent:#7f98ff; --accent-ink:#0f1730; --mark:#ffd84d;
+  }
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -148,3 +158,19 @@ footer{margin-top:4rem;padding:1.5rem 0;border-top:1px solid var(--line);color:v
 footer.status{margin-top:4rem;padding:.6rem 0;background:#1d2740;color:#a7b3d1;border-top:0;font:500 .8rem ui-monospace,Menlo,Consolas,monospace}
 footer.status .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem}
 footer.status .ok::before{content:"";display:inline-block;width:8px;height:8px;margin-right:.5rem;border-radius:50%;background:#7fd6c2}
+
+/* Bouton de changement de thème */
+.theme{display:inline-grid;place-items:center;width:36px;height:36px;margin-left:1rem;padding:0;cursor:pointer;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--ink)}
+.theme:hover{background:var(--surface)}
+.theme svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.theme .i-sun{display:none}
+:root[data-theme="dark"] .theme .i-sun{display:block}
+:root[data-theme="dark"] .theme .i-moon{display:none}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme]) .theme .i-sun{display:block}
+  :root:not([data-theme]) .theme .i-moon{display:none}
+}
+@media (max-width:700px){
+  header.top .wrap{flex-wrap:wrap;gap:.4rem .8rem}
+  .theme{margin-left:0}
+}

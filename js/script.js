@@ -77,3 +77,23 @@ compteur();
 // Année du pied de page
 document.getElementById('annee').textContent = new Date().getFullYear();
 document.getElementById('maj').textContent = new Date(document.lastModified).toLocaleDateString('fr-FR');
+
+// Bouton de thème clair / sombre (le choix est mémorisé dans le navigateur)
+const themeBtn = document.getElementById('theme');
+function majBoutonTheme(){
+  const sombre = document.documentElement.getAttribute('data-theme') === 'dark';
+  themeBtn.setAttribute('aria-label', sombre ? 'Passer au thème clair' : 'Passer au thème sombre');
+}
+themeBtn.addEventListener('click', () => {
+  const suivant = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', suivant);
+  try { localStorage.setItem('theme', suivant); } catch (e) {}
+  majBoutonTheme();
+});
+// Sans choix mémorisé, on suit les changements de réglage de l'appareil
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  let memo = null;
+  try { memo = localStorage.getItem('theme'); } catch (err) {}
+  if (!memo) { document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light'); majBoutonTheme(); }
+});
+majBoutonTheme();
